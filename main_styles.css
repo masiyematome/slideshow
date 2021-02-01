@@ -48,11 +48,35 @@
 .slide-number{
     font-size : 1.5rem;
     font-weight : bold;
-    color : #c03546;
+    color :  #c03546;
     position: absolute;
     z-index : 1;
     right : 0;
     padding : 10px 15px;
+}
+
+.current-slide-dots{
+    position : absolute;
+    bottom: 3%;
+    left : 50%;
+    transform: translate(-50%,-3%);
+    width : 130px;
+    display : flex;
+    justify-content: space-evenly;
+}
+
+.current-slide-dots > span{
+    height : 4px;
+    width : 4px;
+    padding : 6px;
+    border : 2px solid white;
+    border-radius : 50%;
+}
+
+.active{
+    background-color : white;
+    transform: scale(1.2);
+    transition : all ease 1s;
 }
 
 .slide{

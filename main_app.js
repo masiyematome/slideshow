@@ -3,6 +3,7 @@
 const mainContainer = document.querySelector(".main-container");
 const slides = document.querySelectorAll(".slide");
 const slideNumber = document.querySelector(".slide-number");
+const dots = document.querySelectorAll(".dot");
 let currentSlideIndex = 0;
 const slideInterval = setInterval(moveSlideToNext,3000);
 
@@ -18,6 +19,7 @@ const updateSlideNumber = function(){
 
 function moveSlideToNext(){
     slides[currentSlideIndex].className = "slide";
+    dots[currentSlideIndex].classList.remove("active");
 
     if(currentSlideIndex == slides.length-1){
         currentSlideIndex = 0;
@@ -29,6 +31,7 @@ function moveSlideToNext(){
 
     slides[currentSlideIndex].className = "slide showing";
     updateSlideNumber();
+    dots[currentSlideIndex].classList.add("active");
 
 }
 
@@ -38,18 +41,21 @@ function previousToNext(event){
     switch(clickedButton.className){
         case "previous-button":
 
-        slides[currentSlideIndex].className = "slide";
+            slides[currentSlideIndex].className = "slide";
+            dots[currentSlideIndex].classList.remove("active");
 
-            if(currentSlideIndex == 0){
-                currentSlideIndex = slides.length-1;
+            if (currentSlideIndex == 0) {
+                currentSlideIndex = slides.length - 1;
             }
 
-            else{
+            else {
                 currentSlideIndex = currentSlideIndex - 1;
             }
 
-        slides[currentSlideIndex].className = "slide showing";
-        updateSlideNumber();
+            slides[currentSlideIndex].className = "slide showing";
+            updateSlideNumber();
+            dots[currentSlideIndex].classList.add("active");
+
 
             break;
 
