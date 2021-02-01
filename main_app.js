@@ -2,6 +2,7 @@
 
 const mainContainer = document.querySelector(".main-container");
 const slides = document.querySelectorAll(".slide");
+const slideNumber = document.querySelector(".slide-number");
 let currentSlideIndex = 0;
 const slideInterval = setInterval(moveSlideToNext,3000);
 
@@ -10,6 +11,10 @@ const slideInterval = setInterval(moveSlideToNext,3000);
 mainContainer.addEventListener("click",previousToNext);
 
 //Functions
+
+const updateSlideNumber = function(){
+    slideNumber.innerText =  (currentSlideIndex +1) + " / " + (slides.length);
+}
 
 function moveSlideToNext(){
     slides[currentSlideIndex].className = "slide";
@@ -23,6 +28,7 @@ function moveSlideToNext(){
     }
 
     slides[currentSlideIndex].className = "slide showing";
+    updateSlideNumber();
 
 }
 
@@ -43,6 +49,7 @@ function previousToNext(event){
             }
 
         slides[currentSlideIndex].className = "slide showing";
+        updateSlideNumber();
 
             break;
 

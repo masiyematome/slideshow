@@ -12,7 +12,7 @@
     display : flex;
     justify-content: space-evenly;
     width : 60%;
-    height : 70%;
+    height : 80%;
     position : absolute;
     top : 50%;
     left : 50%;
@@ -45,6 +45,15 @@
     border-radius:8px;
 }
 
+.slide-number{
+    font-size : 1.5rem;
+    font-weight : bold;
+    color : #c03546;
+    position: absolute;
+    z-index : 1;
+    right : 0;
+    padding : 10px 15px;
+}
 
 .slide{
     width : 100%;
